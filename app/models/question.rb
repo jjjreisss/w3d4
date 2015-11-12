@@ -22,7 +22,7 @@ class Question < ActiveRecord::Base
     results = Hash.new
 
     answers.each do |answer|
-      results[answer.text] = answer.responses.count
+      results[answer.text] = answer.responses.to_a.count
     end
 
     results
